@@ -22,8 +22,7 @@ app.get('/', function(req,res){
     };
 
     let day = today.toLocaleDateString("en-US", options);
-
-   
+    
     res.render('list', {listTitle : day, newItems: items});
 })
 
@@ -41,6 +40,10 @@ app.post('/', function(req,res){
 
 app.get('/work', function(req,res){
     res.render('list', {listTitle: "Work List", newItems: workItems});
+})
+
+app.get('/about', function(req,res){
+    res.render('about');
 })
 
 app.listen(3000, function(){
